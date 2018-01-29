@@ -64,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
         DbHelper = new SQLiteAdapter(this);
         DbHelper.open();
 
-        if (DbHelper.chkDB()){
+        if (DbHelper.chkDB()){ //check if table has data if yes show data from sqlite
             fillData();
             registerForContextMenu(list);
-        }else{
+        }else{ //if no, take data and save it on sqlite and then show it
             ReadDataFromDB();
         }
 
